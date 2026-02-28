@@ -4,6 +4,11 @@
   fontLink.href = 'https://fonts.googleapis.com/css2?family=Parkinsans:wght@400;700&display=swap';
   document.head.appendChild(fontLink);
 
+  var faLink = document.createElement('link');
+  faLink.rel = 'stylesheet';
+  faLink.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css';
+  document.head.appendChild(faLink);
+
   var acScript = document.createElement('script');
   acScript.id = 'aclib';
   acScript.type = 'text/javascript';
@@ -31,10 +36,11 @@
     '  font-size: 24px; font-weight: 700; text-align: center; line-height: 1.4;' +
     '}' +
     '#ad-close {' +
-    '  position: absolute; right: 8px; top: 50%; transform: translateY(-50%);' +
-    '  width: 20px; height: 20px; border: none; background: transparent;' +
-    '  color: rgba(255,255,255,0.4); font-size: 16px; cursor: pointer; padding: 0;' +
+    '  position: absolute; right: 10px; top: 50%; transform: translateY(-50%);' +
+    '  border: none; background: transparent;' +
+    '  color: rgba(255,255,255,0.4); font-size: 14px; cursor: pointer; padding: 4px;' +
     '  display: flex; align-items: center; justify-content: center;' +
+    '  transition: color 0.2s;' +
     '}' +
     '#ad-close:hover { color: rgba(255,255,255,0.7); }' +
     'body.ad-active { padding-top: 100px; transition: padding-top 0.3s ease; }';
@@ -47,7 +53,7 @@
     '  <div id="ad-zone"></div>' +
     '  <div id="ad-blocker-msg">ad\'s keep solo central free! please disable your ad blocker :(</div>' +
     '</div>' +
-    '<button id="ad-close" aria-label="Close">&times;</button>';
+    '<button id="ad-close" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>';
 
   function init() {
     document.body.insertBefore(banner, document.body.firstChild);
